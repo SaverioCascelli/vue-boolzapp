@@ -18,14 +18,6 @@ img{
     background-color:#009688 ;
 }
 
-.top-bar{
-    position: absolute;
-    height: 10%;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
 .chat-wrapper{
     width: 80%;
     height: 100%;
@@ -35,9 +27,29 @@ img{
 
 }
 
-.chat-header .left{
-    width: 20%;
+.chat-header{
     display: flex;
+   
+}
+.chat-header .left{
+    width: 30%;
+    border-right: 1px solid lightgrey;
+}
+
+.chat-header .right{
+    width: 70%;
+}
+.chat-header .left, .chat-header .right{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+.icons > i{
+    margin: 0px 5px 0px 5px;
+    color: #b1b1b1;
+    
 }
 
 .profile-img{
@@ -50,4 +62,10 @@ img{
     aspect-ratio: 1,1;
     border-radius: 50%;
     overflow: hidden;
+    margin-left: 10px;
+}
+
+.profile-img .date{
+    font-size: .8rem;
+    color:#b1b1b1;
 }
