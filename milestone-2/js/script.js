@@ -168,5 +168,11 @@ createApp({
             ],
             currentActive:0,
         }
+    },
+    methods:{
+        getLastTime(index){
+            const msgPosition = this.contacts[index].messages.length -1;
+            return this.contacts[index].messages[msgPosition].date;
+        }
     }
 }).mount('#app');
