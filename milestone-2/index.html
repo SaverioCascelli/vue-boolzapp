@@ -29,10 +29,14 @@
                     </div>
                     <div class="right">
                         <div class="profile-img card">
-                            <img class="circle" src="../img/avatar_2.jpg" alt="">
+                            <img class="circle" 
+                            :src="'../img/avatar' + contacts[currentActive].avatar + '.jpg'" 
+                            alt="">
                             <div class="name">
-                                <p>Michele</p>
-                                <p class="date">Ultimo accesso oggi alle 12:00</p>
+                                <p>{{contacts[currentActive].name}}</p>
+                                <p class="date">Ultimo accesso oggi alle 
+                                    <span>{{getLastTime(currentActive)}}</span>
+                                </p>
                             </div>
                         </div>
 
