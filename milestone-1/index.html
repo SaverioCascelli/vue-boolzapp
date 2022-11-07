@@ -15,20 +15,20 @@
             <div class="chat-wrapper">
                 <div class="chat-header">
                     <div class="left">
-                        <div class="profile-img">
+                        <div class="card">
                             <img class="circle" src="../img/avatar_1.jpg" alt="">
                             <div class="name">
                                 <p>Sofia</p>
                             </div>
                         </div>
-                        <div class="icons">
+                        <div class="icons text-lgray">
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
                     <div class="right">
-                        <div class="profile-img">
+                        <div class="profile-img card">
                             <img class="circle" src="../img/avatar_2.jpg" alt="">
                             <div class="name">
                                 <p>Michele</p>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
 
-                            <div class="icons">
+                            <div class="icons text-lgray">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -46,24 +46,24 @@
                 <div class="chat-main">
                     <div class="left">
                         <div class="user-box notification">
-                            <div class="profile-img">
+                            <div class="profile-img card">
                                 <div class="circle">
                                     <i class="fa-solid fa-bell-slash"></i>
                                 </div>
                                 <div>
                                    <p>Ricevi notifiche di nuovi messaggi</p>
-                                   <a href="#">Ricevi notifiche desktop</a>
+                                   <a href="#" class="text-lgray">Ricevi notifiche desktop</a>
                                 </div>
                             </div>
                         </div>
                         <div class="search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i  class="text-lgray fa-solid fa-magnifying-glass"></i>
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
 
                         <div class="users">
                             <div class="user-box">
-                                <div class="profile-img">
+                                <div class="card">
                                     <img src="../img/avatar_2.jpg" alt="" class="circle">
                                     <div class="name">
                                         <p>Michele</p>
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="user-box">
-                                <div class="profile-img">
+                                <div class="card">
                                     <img src="../img/avatar_2.jpg" alt="" class="circle">
                                     <div class="name">
                                         <p>Michele</p>
@@ -88,21 +88,8 @@
                                     <p>12.45</p>
                                 </div>
                             </div>
-                             <div class="user-box">
-                                <div class="profile-img">
-                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
-                                    <div class="name">
-                                        <p>Michele</p>
-                                        <p class="date">Ultimo messaggio inviato </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="time">
-                                    <p>12.45</p>
-                                </div>
-                            </div>
-                            <div class="user-box">
-                                <div class="profile-img">
+                             <div class="user-box active">
+                                <div class="card">
                                     <img src="../img/avatar_2.jpg" alt="" class="circle">
                                     <div class="name">
                                         <p>Michele</p>
@@ -115,7 +102,7 @@
                                 </div>
                             </div>
                             <div class="user-box">
-                                <div class="profile-img">
+                                <div class="card">
                                     <img src="../img/avatar_2.jpg" alt="" class="circle">
                                     <div class="name">
                                         <p>Michele</p>
@@ -128,7 +115,20 @@
                                 </div>
                             </div>
                             <div class="user-box">
-                                <div class="profile-img">
+                                <div class="card">
+                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
+                                    <div class="name">
+                                        <p>Michele</p>
+                                        <p class="date">Ultimo messaggio inviato </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="time">
+                                    <p>12.45</p>
+                                </div>
+                            </div>
+                            <div class="user-box">
+                                <div class="card">
                                     <img src="../img/avatar_2.jpg" alt="" class="circle">
                                     <div class="name">
                                         <p>Michele</p>
@@ -146,11 +146,11 @@
                     <div class="right">
                         <div class="chat">
                             <div class="msg sent">
-                                <p>inviato</p>
+                                <p>inviato ultimo</p>
                                 <p class="time">12.45</p>
                             </div>
                             <div class="msg received">
-                                <p>ricevuto</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae quaerat ipsa consequuntur recusandae porro nostrum sint sed esse cumque eligendi quisquam harum eos aperiam, tempore voluptatem? Voluptate debitis maiores autem eos temporibus fuga rerum nemo exercitationem at velit eius, veniam a recusandae adipisci aut ratione corporis dolores eum? Minus omnis, ullam voluptatem aliquid voluptatum nihil exercitationem, ut aspernatur, voluptate iusto ad. Quibusdam voluptas, repellat, fugit odit cumque earum animi beatae est magnam harum, minima eius consequuntur sit non iusto blanditiis omnis reiciendis reprehenderit quae sed hic aliquam! Blanditiis odit sequi deserunt, exercitationem laborum laboriosam. Laboriosam officiis itaque architecto iusto?</p>
                                 <p class="time">12.45</p>
                             </div>
                             <div class="msg sent">
@@ -190,13 +190,16 @@
                                 <p class="time">12.45</p>
                             </div>
                             <div class="msg received">
-                                <p>ricevutoultimo</p>
+                                <p>ricevu</p>
                                 <p class="time">12.45</p>
                             </div>
 
-                            <div id="msg-anchor"></div>
                         </div>
-                        <div class="send-msg"></div>
+                        <div class="send-msg">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <input type="text" placeholder="Scrivi un messaggio">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </div>
             </div>

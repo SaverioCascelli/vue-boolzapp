@@ -4,14 +4,25 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 img{
     width: 100%;
 }
+
+.text-lgray{
+    color: #b1b1b1;
+}
+
 .wrapper{
     background: linear-gradient(180deg , #009688 10%,#d8dbd6 10%);
     height: 100vh;
     position: relative;
     padding: 20px 0px 20px 0px;
+    overflow: auto;
+    min-width: 850px;
 }
 
 .custom-green{
@@ -36,12 +47,12 @@ img{
     height: calc(100% - 80px);
 }
 .chat-wrapper .left{
-    width: 30%;
+    width: 400px;
     flex-shrink: 0;
 }
 
 .chat-wrapper .right{
-    width: 70%;
+    width: calc(100% - 400px);
 }
 
 .chat-header .left, .chat-main .left{
@@ -56,19 +67,21 @@ img{
 
 .icons > i{
     margin: 0px 5px 0px 5px;
-    color: #b1b1b1;
     
 }
 
-.profile-img{
+.card{
+    padding-left: 10px;
     display: flex;
     align-items: center;
     font-weight: 600;
 }
-.profile-img img{
-    
-    margin-left: 10px;
+.card img{
     margin-right: 10px;
+}
+
+.icons{
+    padding: 10px;
 }
 
 .circle{
@@ -78,7 +91,7 @@ img{
     overflow: hidden;
 }
 
-.profile-img .date{
+.card .date{
     font-size: .8rem;
     color:#b1b1b1;
 }
@@ -91,9 +104,14 @@ img{
     justify-content: space-between;
 }
 
+.user-box.active{
+    background-color: #e9ebeb ;
+}
+
 .users{
     width: 100%;
     overflow: auto;
+    background-color: white;
 }
 
 .chat-main{
@@ -121,10 +139,6 @@ img{
     margin-right: 5px;
 }
 
-.notification a{
-    color: #b1b1b1;
-}
-
 .search{
     background-color: white;
     width: 100%;
@@ -134,7 +148,7 @@ img{
 }
 
 .search i{
-    color: #b1b1b1;
+
     margin: 0 10px;
 }
 
@@ -146,6 +160,7 @@ img{
 .time{
     justify-self: end;
     color: #b1b1b1;
+    font-size: .8rem;
 }
 
 .chat-main .right{
@@ -168,11 +183,13 @@ img{
 }
 
 .msg{
-    min-width: 40%;
+    min-width: 350px;
+    max-width: 60%;
     margin: 5px 20px;
     border-radius: 5px;
     padding: 10px;
     align-self: flex-start;
+    flex-shrink: 0;
 }
 
 .msg.sent{
@@ -187,4 +204,24 @@ img{
 .msg .time{
     font-size: .6rem;
     text-align: end;
+}
+
+.send-msg{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.send-msg i{
+    padding: 5px 10px;
+}
+
+.send-msg input{
+    flex-grow: 10;
+    height: 60%;
+    border: none;
+    padding: 5px;
 }
