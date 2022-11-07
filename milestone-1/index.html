@@ -62,11 +62,12 @@
                         </div>
 
                         <div class="users">
-                            <div class="user-box">
-                                <div class="card">
-                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
+                            
+                            <div v-for="contact in contacts" class="user-box">
+                                <div  class="card">
+                                    <img :src="'../img/avatar' + contact.avatar + '.jpg'" :alt="contact.name" class="circle">
                                     <div class="name">
-                                        <p>Michele</p>
+                                        <p>{{contact.name}}</p>
                                         <p class="date">Ultimo messaggio inviato </p>
                                     </div>
                                 </div>
@@ -74,72 +75,7 @@
                                 <div class="time">
                                     <p>12.45</p>
                                 </div>
-                            </div>
-                            <div class="user-box">
-                                <div class="card">
-                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
-                                    <div class="name">
-                                        <p>Michele</p>
-                                        <p class="date">Ultimo messaggio inviato </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="time">
-                                    <p>12.45</p>
-                                </div>
-                            </div>
-                             <div class="user-box active">
-                                <div class="card">
-                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
-                                    <div class="name">
-                                        <p>Michele</p>
-                                        <p class="date">Ultimo messaggio inviato </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="time">
-                                    <p>12.45</p>
-                                </div>
-                            </div>
-                            <div class="user-box">
-                                <div class="card">
-                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
-                                    <div class="name">
-                                        <p>Michele</p>
-                                        <p class="date">Ultimo messaggio inviato </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="time">
-                                    <p>12.45</p>
-                                </div>
-                            </div>
-                            <div class="user-box">
-                                <div class="card">
-                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
-                                    <div class="name">
-                                        <p>Michele</p>
-                                        <p class="date">Ultimo messaggio inviato </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="time">
-                                    <p>12.45</p>
-                                </div>
-                            </div>
-                            <div class="user-box">
-                                <div class="card">
-                                    <img src="../img/avatar_2.jpg" alt="" class="circle">
-                                    <div class="name">
-                                        <p>Michele</p>
-                                        <p class="date">Ultimo messaggio inviato </p>
-                                    </div>
-                                </div>
-                                
-                                <div class="time">
-                                    <p>12.45</p>
-                                </div>
-                            </div>
+                            </div> 
                             
                         </div>
                     </div>
