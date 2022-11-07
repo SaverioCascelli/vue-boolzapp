@@ -1,3 +1,31 @@
-h1{
-    color: red;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    background-color: #d8dbd6;
+    height: 100vh;
+    position: relative;
+    padding: 20px 0px 20px 0px;
+}
+
+.custom-green{
+    background-color:#009688 ;
+}
+
+.top-bar{
+    position: absolute;
+    height: 10%;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.chat-wrapper{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    margin: auto; 
+    position: relative;
 }
