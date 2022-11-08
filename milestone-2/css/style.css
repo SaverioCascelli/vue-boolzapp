@@ -112,6 +112,7 @@ img{
     width: 100%;
     overflow: auto;
     background-color: white;
+    overflow-y: scroll;
 }
 
 .chat-main{
@@ -168,6 +169,7 @@ img{
     flex-direction: column;
 }
 
+/* column reverse needed for showing messages from the bottom */
 .chat-main .chat{
     background-image: url('../../img/mine.jpg') ;
     background-color: blue;
