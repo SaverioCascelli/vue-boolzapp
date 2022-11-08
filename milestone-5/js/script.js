@@ -297,7 +297,7 @@ createApp({
         },
         showOption(index){
             this.setShowOff();
-            const i = this.contacts[this.currentActive].messages.length - index -1;
+            const i = this.adjustIndex(index);
             this.contacts[this.currentActive].messages[i].show = true;
 
             this.mouseLeaveOff();
@@ -315,16 +315,30 @@ createApp({
             const msgArr = document.querySelectorAll('.msg');
             dropdownArr.forEach(element => {
                 element.addEventListener('mouseleave', this.retContacts)
-                
             });
-            msgArr.forEach(element => {
-                element.addEventListener('mouseleave', this.retContacts)
-                
-            });
+            // msgArr.forEach(element => {
+            //     element.addEventListener('mouseleave', this.retContacts) 
+            // });
+            msgArr.forEach(element =>{
+                element.addEventListener('mouseover', function(){
+                    this.setShowOff();
+                })
+            })
         },
         retContacts(){
             this.setShowOff();
+        },
+
+        deleteMsg(index){
+            const i = this.adjustIndex(index);
+            console.log(index);
+            this.contacts[this.currentActive].messages.splice(i,1)
+        },
+
+        adjustIndex(index){
+            return this.contacts[this.currentActive].messages.length - index -1;
         }
+
 
     },created(){
     }
