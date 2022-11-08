@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width={device-widh}, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Vue Boolzapp </title>
+</head>
+<body>
+    <div id="app">
+        <div class="wrapper">
+            <div class="chat-wrapper">
+                <div class="chat-header">
+                    <div class="left">
+                        <div class="card">
+                            <img class="circle" src="../img/avatar_1.jpg" alt="">
+                            <div class="name">
+                                <p>Sofia</p>
+                            </div>
+                        </div>
+                        <div class="icons text-lgray">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="profile-img card">
+                            <img class="circle" 
+                            :src="'../img/avatar' + contacts[currentActive].avatar + '.jpg'" 
+                            alt="">
+                            <div class="name">
+                                <p>{{contacts[currentActive].name}}</p>
+                                <p class="date">Ultimo accesso oggi alle 
+                                    <span>{{getLastTime(currentActive)}}</span>
+                                </p>
+                            </div>
+                        </div>
+
+                            <div class="icons text-lgray">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                    </div>
+                </div>
+                <div class="chat-main">
+                    <div class="left">
+                        <div class="user-box notification">
+                            <div class="profile-img card">
+                                <div class="circle">
+                                    <i class="fa-solid fa-bell-slash"></i>
+                                </div>
+                                <div>
+                                   <p>Ricevi notifiche di nuovi messaggi</p>
+                                   <a href="#" class="text-lgray">Ricevi notifiche desktop</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search">
+                            <i  class="text-lgray fa-solid fa-magnifying-glass"></i>
+                            <input 
+                            v-model="searchName"
+                            type="text" 
+                            @keyup="search()"
+                            placeholder="Cerca o inizia una nuova chat">
+                            
+                        </div>
+
+                        <div class="users">
+                            
+                            <div v-for="(contact,index) in contacts" 
+                            class="user-box"
+                            :class="{'active':(index===currentActive)}"
+                            @click="currentActive = index"
+                            v-show="contact.visible">
+                                <div  class="card">
+                                    <img :src="'../img/avatar' + contact.avatar + '.jpg'" :alt="contact.name" class="circle">
+                                    <div class="name">
+                                        <p>{{contact.name}}</p>
+                                        <p class="date">Ultimo messaggio inviato </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="time">
+                                    <p>{{getLastTime(index)}}</p>
+                                </div>
+                            </div> 
+                            
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="chat">
+                            <!-- reverse order in the array contact.messages -->
+                            <div v-for="msg in contacts[currentActive].messages.slice().reverse()" 
+                            class="msg"
+                            :class="[msg.status === 'sent'? 'sent': 'received' ]">
+                                <p>{{msg.message}}</p>
+                                <p class="time">{{msg.date}}</p>
+                            </div>
+                        </div>
+                        <div class="send-msg">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <input v-model="newMsg" type="text" 
+                            placeholder="Scrivi un messaggio"
+                            @keyup.enter="pushNewMsg(contacts[currentActive])">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
