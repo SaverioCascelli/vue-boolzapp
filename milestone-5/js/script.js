@@ -255,7 +255,6 @@ createApp({
         pushNewMsg(obj){
             if (this.newMsg === '') return;
 
-
             const msg ={
                 date: this.getCurrentTime(),
                 message: this.newMsg,
@@ -295,6 +294,40 @@ createApp({
                     contact.visible = true;
                 }
             });
+        },
+        showOption(index){
+            this.setShowOff();
+            const i = this.contacts[this.currentActive].messages.length - index -1;
+            this.contacts[this.currentActive].messages[i].show = true;
+
+            this.mouseLeaveOff();
+        }, 
+        setShowOff(){
+            console.log('showoff');
+            this.contacts[this.currentActive].messages.forEach(message => {
+                message.show = false;
+            });
+        },
+
+        mouseLeaveOff(){
+            console.log('mouse');
+            const dropdownArr = document.querySelectorAll('.drop-down');
+            const msgArr = document.querySelectorAll('.msg');
+            dropdownArr.forEach(element => {
+                element.addEventListener('mouseleave', this.retContacts)
+                
+            });
+            msgArr.forEach(element => {
+                element.addEventListener('mouseleave', this.retContacts)
+                
+            });
+        },
+        retContacts(){
+            this.setShowOff();
         }
+
+    },created(){
     }
 }).mount('#app');
+
+
