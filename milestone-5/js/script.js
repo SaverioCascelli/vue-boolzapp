@@ -296,16 +296,21 @@ createApp({
             });
         },
         showOption(index){
-            this.setShowOff();
-            const i = this.adjustIndex(index);
-            this.contacts[this.currentActive].messages[i].show = true;
 
+            const i = this.adjustIndex(index);
+            this.contacts[this.currentActive].messages[i].show = !(this.contacts[this.currentActive].messages[i].show);
             this.mouseLeaveOff();
         }, 
         setShowOff(){
-            console.log('showoff');
             this.contacts[this.currentActive].messages.forEach(message => {
                 message.show = false;
+            });
+        },
+
+        setShow(){
+            this.contacts[this.currentActive].messages.forEach(message => {
+                message.show = null;
+
             });
         },
 
@@ -316,14 +321,14 @@ createApp({
             dropdownArr.forEach(element => {
                 element.addEventListener('mouseleave', this.retContacts)
             });
-            // msgArr.forEach(element => {
-            //     element.addEventListener('mouseleave', this.retContacts) 
-            // });
-            msgArr.forEach(element =>{
-                element.addEventListener('mouseover', function(){
-                    this.setShowOff();
-                })
-            })
+            msgArr.forEach(element => {
+               element.addEventListener('mouseleave', this.retContacts) 
+            });
+            // msgArr.forEach(element =>{
+            //     element.addEventListener('mouseover', function(){
+            //         this.setShowOff();
+            //     })
+            // })
         },
         retContacts(){
             this.setShowOff();
@@ -341,6 +346,7 @@ createApp({
 
 
     },created(){
+            this.setShowOff();
     }
 }).mount('#app');
 

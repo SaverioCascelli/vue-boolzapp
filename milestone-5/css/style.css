@@ -94,6 +94,7 @@ img{
 .card .date{
     font-size: .8rem;
     color:#b1b1b1;
+    font-size: .6rem;
 }
 
 .user-box{
@@ -159,9 +160,10 @@ img{
 }
 
 .time{
+    line-height: 30px;
     justify-self: end;
     color: #b1b1b1;
-    font-size: .8rem;
+    font-size: .6rem;
 }
 
 .chat-main .right{
@@ -191,6 +193,7 @@ img{
     flex-shrink: 0;
     position: relative;
     z-index: 3;
+    padding-right: 30px;
 }
 
 .msg:first-child .drop-down{
@@ -202,6 +205,7 @@ img{
     right: 5%;
     top: 15%;
     z-index: 2;
+    cursor: pointer;
 }
 
 .msg i.show + div{
@@ -227,7 +231,8 @@ img{
 
 
 .option >:hover{
-    background-color: lightgray;
+    color: lightgray;
+    cursor: pointer;
 }
 .msg.sent{
     background-color: #d5f9ba;
